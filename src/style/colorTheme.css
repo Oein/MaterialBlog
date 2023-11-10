@@ -1,0 +1,17 @@
+.light {
+  --lay1: #f4f6fc;
+  --lay2: #f8fafd;
+  --lay3: #ffffff;
+  --accent1: #1b73e8;
+  --accent1_dark: #1c65c9;
+  --accent1_light: #e7f0fe;
+  --accent1_enable: #c2e7ff;
+  --hov_bg: #e5e9ec;
+
+  --lay2_text: #001d35;
+  --text_invert: #ffffff;
+
+  --text: rgba(0, 0, 0, 0.87);
+
+  --raidus: 24px;
+}
