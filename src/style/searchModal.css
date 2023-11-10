@@ -1,0 +1,29 @@
+#searchModal > .bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.8;
+  z-index: 199;
+}
+
+#searchModal > #modal {
+  pointer-events: initial;
+  background: var(--lay2);
+  box-shadow: 10px 10px 22px #00000009, -10px -10px 22px #00000009;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  position: absolute;
+  min-width: 300px;
+  max-width: 90vw;
+
+  z-index: 200;
+
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
