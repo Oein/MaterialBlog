@@ -1,0 +1,41 @@
+.banner {
+  width: 100%;
+  border-radius: var(--raidus);
+  padding: 56px;
+  position: relative;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  color: var(--text_invert);
+
+  margin-bottom: 8px;
+}
+
+.banner::before {
+  width: 100%;
+  height: 100%;
+  content: " ";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  background: var(--lay2);
+  background-image: var(--img);
+
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: cover;
+  filter: brightness(0.7) blur(5px);
+  border-radius: var(--raidus);
+
+  z-index: 0;
+
+  scale: 1.1;
+}
+
+.banner > div {
+  position: relative;
+  z-index: 1;
+}
