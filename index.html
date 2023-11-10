@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[##_page_title_##] / [##_title_##]</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body id="[##_body_id_##]" style="--img: url([##_image_##])">
+    <s_t3> </s_t3>
+
+    <div id="searchModal">
+      <div class="bg"></div>
+      <div id="modal">
+        <md-filled-text-field label="Label" value="Value">
+        </md-filled-text-field>
+      </div>
+    </div>
+
+    <div class="main">
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <a role="link" aria-label="홈" aria-current="false" path="/">
+          <div class="icon">
+            <span class="material-symbols-rounded"> home </span>
+          </div>
+          <div class="text">
+            <span>홈</span>
+          </div>
+        </a>
+        <a
+          role="button"
+          aria-label="검색"
+          aria-current="false"
+          nomove
+          id="searchBTN"
+        >
+          <div class="icon">
+            <span class="material-symbols-rounded"> search </span>
+          </div>
+          <div class="text">
+            <span>검색</span>
+          </div>
+        </a>
+        <a
+          role="link"
+          aria-label="전체글"
+          aria-current="false"
+          path="/category"
+        >
+          <div class="icon">
+            <span class="material-symbols-rounded"> list </span>
+          </div>
+          <div class="text">
+            <span>전체글</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="right_page">
+        <!-- Main Page -->
+
+        <div class="banner">
+          <div>
+            <h1>[##_title_##]</h1>
+            <desc>[##_desc_##]</desc>
+          </div>
+        </div>
+        <!-- Article View -->
+        <s_article_rep>
+          <s_permalink_article_rep>
+            <div class="permalink">
+              <div class="invisible" id="articledata">
+                [##_article_rep_desc_##]
+              </div>
+              <article id="article"></article>
+            </div>
+          </s_permalink_article_rep>
+
+          <s_index_article_rep> 인덱스!! </s_index_article_rep>
+        </s_article_rep>
+      </div>
+    </div>
+
+    <script type="module" src="./src/article.ts"></script>
+    <script type="module" src="./src/global.ts"></script>
+    <script type="module" src="./src/sidebar.ts"></script>
+
+    <!-- <script type="module" src="./src/dev.ts"></script> -->
+  </body>
+</html>
