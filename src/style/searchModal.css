@@ -5,19 +5,28 @@
   top: 0;
   left: 0;
   background: #000000;
-  opacity: 0.8;
+  opacity: 0;
   z-index: 199;
+
+  transition: all 0.5s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+#searchModal.enabled > .bg {
+  opacity: 0.8;
+  pointer-events: initial;
+  user-select: initial;
 }
 
 #searchModal > #modal {
   pointer-events: initial;
   background: var(--lay2);
   box-shadow: 10px 10px 22px #00000009, -10px -10px 22px #00000009;
-  margin: 12px;
+  margin: 12px 0px;
   padding: 12px;
   border-radius: 12px;
   position: absolute;
-  min-width: 300px;
   max-width: 90vw;
 
   z-index: 200;
@@ -25,5 +34,51 @@
   position: fixed;
   top: 0px;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0) translateY(-16px) scale(0.8);
+  opacity: 0;
+  transition: all 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+#searchModal.enabled > #modal {
+  opacity: 1;
+  transform: translate(-50%, 0) translateY(0) scale(1);
+  pointer-events: initial;
+  user-select: initial;
+}
+
+.searchKeyword {
+  width: calc(90vw - 24px);
+  max-width: 800px;
+  font-size: 1.18em;
+  transition: all 0.2s ease;
+  background: var(--accent1_light);
+}
+
+.tor {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.tor > button {
+  background: var(--accent1);
+  color: var(--lay2);
+  border: none;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 1.18em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#modalTitle {
+  font-size: 0.7em;
+  padding: 0px 8px;
 }
