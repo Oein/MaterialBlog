@@ -1,0 +1,98 @@
+.rowview {
+  --items-per-row: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--items-per-row), 1fr);
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .rowview {
+    --items-per-row: 1;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .rowview {
+    --items-per-row: 3;
+  }
+}
+
+.card {
+  background: var(--lay2);
+  border-radius: var(--raidus);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.card:hover {
+  background: var(--accent1_enable);
+}
+
+.card_img {
+  height: 200px;
+  width: 100%;
+  background: var(--accent1_enable);
+  background-image: var(--url);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--raidus);
+}
+
+.card_text {
+  width: 100%;
+  display: grid;
+  position: relative;
+  align-self: start;
+  padding: 24px;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+heading {
+  font-size: 24px;
+  font-weight: 475;
+  letter-spacing: 0;
+  line-height: 32px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  margin-top: 1px;
+  max-height: 80px;
+  overflow: hidden;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  word-break: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card_text > p {
+  margin: 0px;
+  padding: 0px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  margin-top: 1px;
+  max-height: 80px;
+  overflow: hidden;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
