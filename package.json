@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "node upload.cjs"
+    "deploy": "node upload.cjs",
+    "rename": "cp dist/index.html dist/skin.html; rm dist/index.html"
   },
   "devDependencies": {
     "typescript": "^5.0.2",
