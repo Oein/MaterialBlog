@@ -8,9 +8,10 @@ Material Blog는 Google의 [Material Design 3](https://m3.material.io/)에서 �
 
 - [x] 사이드바
 - [x] 배너
-- [ ] 홈
-- [ ] 본문 보기
-- [ ] 글 검색
+- [x] 홈
+- [x] 본문 보기
+- [x] 글 검색
+- [ ] 페이지 이동
 - [ ] 카테고리
 - [ ] 댓글
 - [ ] TOC
