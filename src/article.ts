@@ -38,12 +38,16 @@ const renderArticle = () => {
   articleDOM.innerHTML = document.getElementById("articledata")!.innerHTML;
 };
 
-(() => {
-  if (document.getElementById("tt-body-page") == null) return;
-  if (!articleDOM) throw new Error("Article DOM not found");
-  parseArticleData();
-  renderArticle();
+try {
+  (() => {
+    if (document.getElementById("tt-body-page") == null) return;
+    if (!articleDOM) throw new Error("Article DOM not found");
+    parseArticleData();
+    renderArticle();
 
-  // remove article data
-  document.getElementById("articledata")?.remove();
-})();
+    // remove article data
+    document.getElementById("articledata")?.remove();
+  })();
+} catch (e) {
+  console.error(e);
+}
