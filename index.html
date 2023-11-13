@@ -9,87 +9,178 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+
+    <!-- <script type="module" src="./src/dev.ts" async></script> -->
   </head>
   <body id="[##_body_id_##]" style="--img: url([##_image_##])">
-    <s_t3> </s_t3>
-
-    <!-- <div id="searchModal">
-      <div class="bg"></div>
-      <div id="modal">
-        <md-filled-text-field label="Label" value="Value">
-        </md-filled-text-field>
-      </div>
-    </div> -->
-
-    <div class="main">
-      <!-- Sidebar -->
-      <div class="sidebar" id="sidebar">
-        <a role="link" aria-label="홈" aria-current="false" path="/">
-          <div class="icon">
-            <span class="material-symbols-rounded"> home </span>
-          </div>
-          <div class="text">
-            <span>홈</span>
-          </div>
-        </a>
-        <a
-          role="button"
-          aria-label="검색"
-          aria-current="false"
-          nomove
-          id="searchBTN"
-        >
-          <div class="icon">
-            <span class="material-symbols-rounded"> search </span>
-          </div>
-          <div class="text">
-            <span>검색</span>
-          </div>
-        </a>
-        <a
-          role="link"
-          aria-label="전체글"
-          aria-current="false"
-          path="/category"
-        >
-          <div class="icon">
-            <span class="material-symbols-rounded"> list </span>
-          </div>
-          <div class="text">
-            <span>전체글</span>
-          </div>
-        </a>
+    <s_t3>
+      <div id="searchModal">
+        <div class="bg" id="modalbg"></div>
+        <s_search>
+          <form id="modal" autocomplete="off">
+            <span id="modalTitle">글 검색하기</span>
+            <input
+              class="searchKeyword"
+              placeholder="검색어"
+              autocapitalize="off"
+              autocomplete="off"
+              type="search"
+              name="[##_search_name_##]"
+              value="[##_search_text_##]"
+              id="searchInput"
+              onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
+            />
+            <div class="tor">
+              <button onclick="[##_search_onclick_submit_##]">검색</button>
+            </div>
+          </form>
+        </s_search>
       </div>
 
-      <div class="right_page">
-        <!-- Main Page -->
+      <div class="main">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+          <a role="link" aria-label="홈" aria-current="false" path="/">
+            <div class="icon">
+              <span class="material-symbols-rounded"> home </span>
+            </div>
+            <div class="text">
+              <span>홈</span>
+            </div>
+          </a>
+          <a
+            role="button"
+            aria-label="검색"
+            aria-current="false"
+            nomove
+            path="/search"
+            id="searchBTN"
+          >
+            <div class="icon">
+              <span class="material-symbols-rounded"> search </span>
+            </div>
+            <div class="text">
+              <span>검색</span>
+            </div>
+          </a>
+          <a
+            role="link"
+            aria-label="전체글"
+            aria-current="false"
+            path="/category"
+          >
+            <div class="icon">
+              <span class="material-symbols-rounded"> list </span>
+            </div>
+            <div class="text">
+              <span>전체글</span>
+            </div>
+          </a>
+        </div>
 
-        <div class="banner">
-          <div>
-            <h1>[##_title_##]</h1>
-            <desc>[##_desc_##]</desc>
+        <div class="right_page">
+          <!-- Main Page -->
+          <div class="banner notOnPage">
+            <div>
+              <h1>[##_title_##]</h1>
+              <desc> [##_desc_##] </desc>
+            </div>
+          </div>
+
+          <div class="onPage" id="move2here_1"></div>
+
+          <div class="w100 mainWrapper">
+            <div class="container">
+              <!-- Article View -->
+
+              <div class="viewOnly_home">
+                <sectionheading>최근 글</sectionheading>
+              </div>
+              <div class="viewOnly_search">
+                <sectionheading>검색 결과</sectionheading>
+              </div>
+
+              <div id="mayrowview" class="rowview">
+                <s_article_rep>
+                  <s_permalink_article_rep>
+                    <div class="banner onPage" id="moveOnLoad_1">
+                      <div>
+                        <h1>[##_article_rep_title_##]</h1>
+                        <desc> 작성일 [##_article_rep_simple_date_##] </desc>
+                      </div>
+                    </div>
+
+                    <div class="permalink">
+                      <div class="invisible" id="articledata">
+                        [##_article_rep_desc_##]
+                      </div>
+                      <article id="article"></article>
+                    </div>
+                  </s_permalink_article_rep>
+                  <s_index_article_rep>
+                    <div
+                      class="card"
+                      onclick="window.moveTo(`[##_article_rep_link_##]`)"
+                    >
+                      <div
+                        class="card_img"
+                        style="--url: url([##_article_rep_thumbnail_url_##])"
+                      ></div>
+                      <div class="card_text">
+                        <heading>[##_article_rep_title_##]</heading>
+                        <p class="handleMD">[##_article_rep_summary_##]</p>
+                      </div>
+                    </div>
+                  </s_index_article_rep>
+                  <s_article_protected>
+                    <div
+                      class="card notOnPage"
+                      onclick="window.moveTo(`[##_article_rep_link_##]`)"
+                    >
+                      <div
+                        class="card_img"
+                        style="--url: url([##_article_rep_thumbnail_url_##])"
+                      ></div>
+                      <div class="card_text">
+                        <heading>[##_article_rep_title_##]</heading>
+                        <p>보호된 글 입니다.</p>
+                      </div>
+                    </div>
+                    <div class="onPage">
+                      <div class="permalink">
+                        <heading>보호된 글 입니다.</heading>
+                        <input
+                          type="password"
+                          id="[##_article_password_##]"
+                          name="[##_article_password_##]"
+                          value=""
+                          placeholder="비밀번호"
+                          onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]"
+                        />
+                        <input
+                          type="button"
+                          class="submit"
+                          value="확인"
+                          onclick="[##_article_dissolve_##]"
+                        />
+                      </div>
+                    </div>
+                  </s_article_protected>
+                </s_article_rep>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Article View -->
-        <s_article_rep>
-          <s_permalink_article_rep>
-            <div class="permalink">
-              <div class="invisible" id="articledata">
-                [##_article_rep_desc_##]
-              </div>
-              <article id="article"></article>
-            </div>
-          </s_permalink_article_rep>
-
-          <s_index_article_rep> 인덱스!! </s_index_article_rep>
-        </s_article_rep>
       </div>
-    </div>
+    </s_t3>
 
     <script type="module" src="./src/article.ts"></script>
     <script type="module" src="./src/global.ts"></script>
     <script type="module" src="./src/sidebar.ts"></script>
 
-    <!-- <script type="module" src="./src/dev.ts"></script> -->
+    <script type="module" src="./src/bodyIDApplyer.ts"></script>
+    <script type="module" src="./src/handleMD.ts"></script>
+
+    <script type="module" src="./src/search.ts"></script>
   </body>
 </html>
