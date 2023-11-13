@@ -13,6 +13,12 @@
   margin-bottom: 8px;
 }
 
+@media screen and (max-width: 600px) {
+  .banner {
+    padding: var(--raidus);
+  }
+}
+
 .banner::before {
   width: 100%;
   height: 100%;
