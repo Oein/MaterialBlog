@@ -1,5 +1,14 @@
 .permalink {
   max-width: 1112px;
   margin: 0 auto;
-  padding: var(--raidus) 0px;
+  padding: var(--raidus);
+}
+
+.pwinputform {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  align-content: stretch;
+  align-items: stretch;
 }
