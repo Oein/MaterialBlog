@@ -38,6 +38,10 @@ const renderArticle = () => {
   articleDOM.innerHTML = document.getElementById("articledata")!.innerHTML;
 };
 
+const renderCodeCopy = () => {
+  document.querySelectorAll("pre > code");
+};
+
 try {
   (() => {
     if (document.getElementById("tt-body-page") == null) return;
@@ -47,6 +51,8 @@ try {
 
     // remove article data
     document.getElementById("articledata")?.remove();
+
+    (window as any).hljs.highlightAll();
   })();
 } catch (e) {
   console.error(e);

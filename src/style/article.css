@@ -12,3 +12,7 @@
   align-content: stretch;
   align-items: stretch;
 }
+
+code {
+  border-radius: 8px;
+}
