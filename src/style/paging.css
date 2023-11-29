@@ -1,0 +1,61 @@
+#pagingWr {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#paging {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+
+  background: var(--lay2);
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.pageItem:first-child {
+  border-radius: 8px 0px 0px 8px;
+}
+.pageItem:last-child {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.pageItem {
+  padding: 8px;
+  text-decoration: none;
+  color: var(--text);
+  aspect-ratio: 1/ 1;
+  font-size: 0.8rem;
+  box-sizing: content-box;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+
+  transition: all 0.2s ease-in-out;
+}
+.pageItem > div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.pageItem.no-more-next,
+.pageItem.no-more-prev {
+  color: rgba(0, 0, 0, 0.3);
+}
+.pageItem.enabled {
+  background: var(--accent1_enable);
+  border-radius: 6px;
+  font-size: 1.05em;
+  font-weight: 600;
+}
+.pageItem:not(.enabled):hover {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.pageItem > div > span.material-symbols-rounded {
+  --size: 1rem;
+  scale: 1.5;
+}

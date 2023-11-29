@@ -5,6 +5,7 @@ import "./style/banner.css";
 import "./style/searchModal.css";
 import "./style/rowview.css";
 import "./style/article.css";
+import "./style/paging.css";
 
 try {
   (window as any).moveTo = (path: string) => {

@@ -146,28 +146,63 @@
                         <p>보호된 글 입니다.</p>
                       </div>
                     </div>
+
+                    <div class="banner onPage">
+                      <div>
+                        <h1>[##_article_rep_title_##]</h1>
+                        <desc> 작성일 [##_article_rep_simple_date_##] </desc>
+                      </div>
+                    </div>
                     <div class="onPage">
                       <div class="permalink">
                         <heading>보호된 글 입니다.</heading>
-                        <input
-                          type="password"
-                          id="[##_article_password_##]"
-                          name="[##_article_password_##]"
-                          value=""
-                          placeholder="비밀번호"
-                          onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]"
-                        />
-                        <input
-                          type="button"
-                          class="submit"
-                          value="확인"
-                          onclick="[##_article_dissolve_##]"
-                        />
+                        <div class="pwinputform">
+                          <input
+                            type="password"
+                            id="[##_article_password_##]"
+                            name="[##_article_password_##]"
+                            value=""
+                            placeholder="비밀번호"
+                            onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]"
+                          />
+                          <input
+                            type="button"
+                            class="submit"
+                            value="확인"
+                            onclick="[##_article_dissolve_##]"
+                          />
+                        </div>
                       </div>
                     </div>
                   </s_article_protected>
                 </s_article_rep>
               </div>
+
+              <s_paging>
+                <div id="pagingWr">
+                  <div id="paging">
+                    <a [##_prev_page_##] class="[##_no_more_prev_##] pageItem">
+                      <div>
+                        <span class="material-symbols-rounded">
+                          navigate_before
+                        </span>
+                      </div>
+                    </a>
+                    <s_paging_rep>
+                      <a [##_paging_rep_link_##] class="pageItem">
+                        <div>[##_paging_rep_link_num_##]</div>
+                      </a>
+                    </s_paging_rep>
+                    <a [##_next_page_##] class="[##_no_more_next_##] pageItem">
+                      <div>
+                        <span class="material-symbols-rounded">
+                          navigate_next
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </s_paging>
             </div>
           </div>
         </div>
@@ -182,5 +217,6 @@
     <script type="module" src="./src/handleMD.ts"></script>
 
     <script type="module" src="./src/search.ts"></script>
+    <script type="module" src="./src/pagition.ts"></script>
   </body>
 </html>
