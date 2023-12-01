@@ -38,9 +38,7 @@ const renderArticle = () => {
   articleDOM.innerHTML = document.getElementById("articledata")!.innerHTML;
 };
 
-const renderCodeCopy = () => {
-  document.querySelectorAll("pre > code");
-};
+const renderCodeCopy = () => {};
 
 try {
   (() => {
@@ -53,6 +51,7 @@ try {
     document.getElementById("articledata")?.remove();
 
     (window as any).hljs.highlightAll();
+    renderCodeCopy();
   })();
 } catch (e) {
   console.error(e);
