@@ -33,6 +33,7 @@
   height: 1rem;
   line-height: 1rem;
   text-align: center;
+  user-select: none;
 
   transition: all 0.2s ease-in-out;
 }
@@ -58,4 +59,8 @@
 .pageItem > div > span.material-symbols-rounded {
   --size: 1rem;
   scale: 1.5;
+}
+
+#dotdotdot {
+  cursor: pointer;
 }

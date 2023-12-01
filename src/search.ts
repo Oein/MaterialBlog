@@ -7,15 +7,14 @@ const sidebarCreate = () => {
 
   searchBTN.addEventListener("click", () => {
     searchModal?.classList.add("enabled");
-    document.getElementById("searchInput")?.focus();
-  });
-
-  document.getElementById("modalbg")?.addEventListener("click", () => {
-    searchModal?.classList.remove("enabled");
-  });
-
-  document.getElementById("modal")?.addEventListener("click", (e) => {
-    e.stopPropagation();
+    if (document.getElementById("searchInput") != null) {
+      document.getElementById("searchInput")!.focus();
+      (
+        document.getElementById("searchInput")! as HTMLInputElement
+      ).placeholder = "검색어";
+    }
+    if (document.getElementById("modalTitle") != null)
+      document.getElementById("modalTitle")!.innerText = "글 검색하기";
   });
 };
 
@@ -23,6 +22,13 @@ try {
   document.getElementById("modal")?.addEventListener("submit", (e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
+    e.stopPropagation();
+  });
+  document.getElementById("modalbg")?.addEventListener("click", () => {
+    document.getElementById("searchModal")?.classList.remove("enabled");
+  });
+
+  document.getElementById("modal")?.addEventListener("click", (e) => {
     e.stopPropagation();
   });
   sidebarCreate();
