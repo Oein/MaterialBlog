@@ -28,6 +28,15 @@ try {
       });
       break;
   }
+
+  if (
+    document.getElementById("moveme2_0") != null &&
+    document.getElementById("move2here_0") != null
+  ) {
+    document.getElementById("move2here_0")!.outerHTML =
+      document.getElementById("moveme2_0")!.outerHTML;
+    document.getElementById("moveme2_0")!.remove();
+  }
 } catch (e) {
   console.error(e);
 }
