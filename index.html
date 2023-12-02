@@ -16,13 +16,11 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-    <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-
-    <!-- <script type="module" src="./src/dev.ts" async></script> -->
   </head>
   <body id="[##_body_id_##]" style="--img: url([##_image_##])">
     <s_t3>
+      <!-- Modal -->
       <div id="searchModal">
         <div class="bg" id="modalbg"></div>
         <s_search>
@@ -35,12 +33,13 @@
               autocomplete="off"
               type="search"
               name="[##_search_name_##]"
-              value="[##_search_text_##]"
               id="searchInput"
               onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }"
             />
             <div class="tor">
-              <button onclick="[##_search_onclick_submit_##]">검색</button>
+              <button onclick="[##_search_onclick_submit_##]" id="searchIt">
+                검색
+              </button>
             </div>
           </form>
         </s_search>
@@ -96,24 +95,30 @@
             </div>
           </div>
 
+          <!-- 보호글 배너 이동 위치 -->
           <div class="banner onPage" id="move2here_0"></div>
 
+          <!-- 글 배너 -->
           <div class="onPage" id="move2here_1"></div>
 
           <div class="w100 mainWrapper">
             <div class="container">
               <!-- Article View -->
 
+              <!-- Heading Title : 최근 글 -->
               <div class="viewOnly_home">
                 <sectionheading>최근 글</sectionheading>
               </div>
+              <!-- Heading Title : 검색 결과 -->
               <div class="viewOnly_search">
                 <sectionheading>검색 결과</sectionheading>
               </div>
 
               <div id="mayrowview" class="rowview">
                 <s_article_rep>
+                  <!-- 글 보기 -->
                   <s_permalink_article_rep>
+                    <!-- 글 배너 -->
                     <div class="banner onPage" id="moveOnLoad_1">
                       <div>
                         <h1>[##_article_rep_title_##]</h1>
@@ -128,6 +133,7 @@
                       <article id="article"></article>
                     </div>
                   </s_permalink_article_rep>
+                  <!-- 글 리스트 -->
                   <s_index_article_rep>
                     <div
                       class="card"
@@ -143,6 +149,7 @@
                       </div>
                     </div>
                   </s_index_article_rep>
+                  <!-- 보호글 -->
                   <s_article_protected>
                     <div
                       class="card notOnPage"
@@ -189,6 +196,7 @@
                 </s_article_rep>
               </div>
 
+              <!-- Pagition -->
               <s_paging>
                 <div id="pagingWr">
                   <div id="paging">
