@@ -1,3 +1,10 @@
+import openModal from "./modal";
+
+let inputScript = document
+  .getElementById("searchInput")
+  ?.getAttribute("onkeypress");
+let buttonScript = document.getElementById("searchIt")?.getAttribute("onclick");
+
 const sidebarCreate = () => {
   let searchBTN = document.getElementById("searchBTN");
   let searchModal = document.getElementById("searchModal");
@@ -6,31 +13,16 @@ const sidebarCreate = () => {
   if (searchModal == null) throw new Error("DOM : Search modal not found");
 
   searchBTN.addEventListener("click", () => {
-    searchModal?.classList.add("enabled");
-    if (document.getElementById("searchInput") != null) {
-      document.getElementById("searchInput")!.focus();
-      (
-        document.getElementById("searchInput")! as HTMLInputElement
-      ).placeholder = "검색어";
-    }
-    if (document.getElementById("modalTitle") != null)
-      document.getElementById("modalTitle")!.innerText = "글 검색하기";
+    openModal({
+      title: "글 검색하기",
+      placeholder: "검색어",
+      inputScript: inputScript!,
+      buttonScript: buttonScript!,
+    });
   });
 };
 
 try {
-  document.getElementById("modal")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    e.stopPropagation();
-  });
-  document.getElementById("modalbg")?.addEventListener("click", () => {
-    document.getElementById("searchModal")?.classList.remove("enabled");
-  });
-
-  document.getElementById("modal")?.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
   sidebarCreate();
 } catch (e) {
   console.error(e);
