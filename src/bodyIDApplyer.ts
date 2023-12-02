@@ -20,6 +20,8 @@ try {
       if (mvh && mvo) {
         mvh.outerHTML = mvo.outerHTML;
         mvo.remove();
+
+        document.getElementById("move2here_0")?.remove();
       }
       break;
     case "tt-body-search":
